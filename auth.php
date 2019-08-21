@@ -1,12 +1,16 @@
 <?php
 
-
-
 require 'vendor/autoload.php';
 
 
+/* 
+	cookies como true para manter os cookies entre as requisições 
+	Precisamos do cookie de autenticação
+*/
+
 $client = new \GuzzleHttp\Client(['cookies' => true]);
 
+/* Faz a autenticação */
 $client->request('GET', 
 							 'http://tos.emap.ma.gov.br/tosp', 
 							 [
@@ -15,6 +19,7 @@ $client->request('GET',
 							]);
 
 
+/* Faz a consulta */
 $response = $client->request('POST', 
 							 'http://tos.emap.ma.gov.br/tosp/PESAGEMWS/filtrar', 
 							 [
