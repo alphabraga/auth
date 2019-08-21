@@ -1,0 +1,13 @@
+{
+    "name": "alphabraga/auth",
+    "type": "guzzle/guzzle",
+    "require": {
+        "guzzlehttp/guzzle": "6.3.3"
+    },
+    "authors": [
+        {
+            "name": "Alfredo",
+            "email": "alphabraga@hotmail.com"
+        }
+    ]
+}
