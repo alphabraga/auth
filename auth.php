@@ -12,10 +12,10 @@ $client = new \GuzzleHttp\Client(['cookies' => true]);
 
 /* Faz a autenticação */
 $client->request('GET', 
-							 'http://tos.emap.ma.gov.br/tosp', 
+							 'url-do-tosplus', 
 							 [
 								'query' => ['portal' => 'ORG'],
-								'auth' => ['admin', '***REMOVED***']
+								'auth' => ['seu-usuario', 'sua-senha']
 							]);
 
 
