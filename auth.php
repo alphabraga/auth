@@ -12,10 +12,10 @@ $client = new \GuzzleHttp\Client(['cookies' => true]);
 
 /* Faz a autenticação */
 $client->request('GET', 
-							 'http://www.endereco.do.tosplus/tosp', 
+							 'http://tos.emap.ma.gov.br/tosp', 
 							 [
 								'query' => ['portal' => 'ORG'],
-								'auth' => ['seu-usuario', 'sua-senha']
+								'auth' => ['admin', '***REMOVED***']
 							]);
 
 
@@ -38,4 +38,43 @@ $response = $client->request('POST',
 							]);
 
 echo $response->getStatusCode();
-echo $response->getBody();
+
+//Pego o json do corpo da requisição, que é um json
+$jsonString = $response->getBody();
+
+//essa funcção vai transformar uma a string json em um array de objetos
+$dados = json_decode($jsonString);
+
+//faço um loop no array de objetos, veja que o loop tem que 
+//começar com o $dados[1]...
+foreach ($dados[1] as $pesagem){
+
+	//mesma logica aqui, os dados da pesagem estão no elemento 1 do array
+	// e ele é um objeto
+	$pesagemObjeto =  $pesagem[1];
+
+	echo '################################' . PHP_EOL;
+
+    echo $pesagemObjeto->cliente . PHP_EOL;
+    echo $pesagemObjeto->cnpjCliente . PHP_EOL;
+    echo $pesagemObjeto->motorista . PHP_EOL;
+    echo $pesagemObjeto->cpfMotorista . PHP_EOL;
+    echo $pesagemObjeto->transportador . PHP_EOL;
+    echo $pesagemObjeto->cnpjTransp . PHP_EOL;
+    echo $pesagemObjeto->navio . PHP_EOL;
+    echo $pesagemObjeto->placa . PHP_EOL;
+    echo $pesagemObjeto->balanca . PHP_EOL;
+    echo $pesagemObjeto->fluxo . PHP_EOL;
+    echo $pesagemObjeto->ticket . PHP_EOL;
+    echo $pesagemObjeto->bl . PHP_EOL;
+    echo $pesagemObjeto->di . PHP_EOL;
+    echo $pesagemObjeto->marca  . PHP_EOL;
+    echo $pesagemObjeto->codigoNcm . PHP_EOL;
+    echo $pesagemObjeto->pesoTara . PHP_EOL;
+    echo $pesagemObjeto->pesoLiquido . PHP_EOL;
+    echo $pesagemObjeto->pesoBruto . PHP_EOL;
+    echo $pesagemObjeto->dataTara . PHP_EOL;
+    echo $pesagemObjeto->dataPeso . PHP_EOL;
+
+
+}
