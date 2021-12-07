@@ -1,6 +1,4 @@
-# Exemplo de autenticação usando o PHP 7.2 e biblioteca Gluzze
-
-Para entender melhor o funcionamento desse código veja o video [video](https://www.dropbox.com/s/4ao05uw2j82qreg/para-zap-webservice-funcionando.mp4?dl=0) ou acesse o link https://www.dropbox.com/s/4ao05uw2j82qreg/para-zap-webservice-funcionando.mp4?dl=0
+# Exemplo de autenticação usando o PHP 8.1 e biblioteca Gluzze
 
 Para executar esse projeto basta ter instalado na sua máquina o php 7.2, o php-cli e o composer.
 
@@ -10,8 +8,12 @@ Faça o clone desse repositorio:
 
 Dentro do repositorio rode o comando:
 
-    composer install
+    sudo docker built -t auth .
  
-Agora é só executar o projeto com:
+Agora rode o container
+
+    sudo docker run -dit --rm --name meucontainer auth
+
+Agora é só executar com:
     
-    php auth.php
+    sudo docker exec -it meucontainer php auth.php
