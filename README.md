@@ -8,7 +8,7 @@ Faça o clone desse repositorio:
 
 Dentro do repositorio rode o comando:
 
-    sudo docker built -t auth .
+    sudo docker build -t auth .
  
 Agora rode o container
 
