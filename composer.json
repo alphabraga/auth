@@ -1,8 +1,7 @@
 {
     "name": "alphabraga/auth",
-    "type": "guzzle/guzzle",
     "require": {
-        "guzzlehttp/guzzle": "6.3.3"
+        "guzzlehttp/guzzle": "*"
     },
     "authors": [
         {

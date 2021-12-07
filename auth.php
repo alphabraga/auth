@@ -12,16 +12,16 @@ $client = new \GuzzleHttp\Client(['cookies' => true]);
 
 /* Faz a autenticação */
 $client->request('GET', 
-							 'url-do-tosplus', 
+							 'https://tos.emap.ma.gov.br/tosp', 
 							 [
 								'query' => ['portal' => 'ORG'],
-								'auth' => ['seu-usuario', 'sua-senha']
+								'auth' => ['usuario', 'senha']
 							]);
 
 
 /* Faz a consulta */
 $response = $client->request('POST', 
-							 'http://tos.emap.ma.gov.br/tosp/PESAGEMWS/filtrar', 
+							 'https://tos.emap.ma.gov.br/tosp/PESAGEMWS/filtrar', 
 							 [
 							 	'body'  => '["tosp.foundation.core.kernel.coqueryobject.CoQueryObjectDynamic",
 												 {"PesagemDTO":["java.util.HashMap",	
