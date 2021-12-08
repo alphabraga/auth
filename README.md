@@ -1,10 +1,16 @@
+# Veja o video
+
+https://youtu.be/k5DJVxRG5rs
+
 # Exemplo de autenticação usando o PHP 8.1 e biblioteca Gluzze
 
-Faça o clone desse repositorio:
+Faça o clone desse repositório:
 
     git clone https://github.com/alphabraga/auth.git
 
-Dentro do repositorio rode o comando:
+Abra o arquivo auth.php e coloque seu usuário e senha.
+
+Dentro do repositório rode o comando:
 
     sudo docker build -t auth .
  
